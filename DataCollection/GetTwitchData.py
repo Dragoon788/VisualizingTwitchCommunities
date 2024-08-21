@@ -2,7 +2,6 @@ import requests
 import json
 import sys
 import io
-import Credentials as cr
 
 #Any instance of sys.stdout.flush() is just to force python to print at the right times so I can keep track of whats happening
 
@@ -13,7 +12,7 @@ def GetTopStreams(numberOfStreams):
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="UTF-8")
 
     #Header auth values taken from twitchtokengenerator.com, not sure what to do if they break
-    Headers = {'Client-ID': cr.clientID, 'Authorization': "Bearer " + cr.clientSecret}
+    Headers = {'Client-ID': '0t7w160wzr2rw8j77sagocq9kcwrv4', 'Authorization': "Bearer " + 'y4o48d9t9zg3iz0vr5dye5ukh4aqz1'}
 
     #Request top 100 viewed streams on twitch
     r = requests.get('https://api.twitch.tv/helix/streams?first=' + str(numberOfStreams), headers=Headers)
